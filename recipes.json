@@ -1,0 +1,237 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Chocolate Chip Cookies",
+      "image": "https://via.placeholder.com/800x300?text=Chocolate+Chip+Cookies",
+      "tags": ["butter", "sugar", "plain flour", "chocolate chips", "vanilla extract", "eggs", "baking soda", "salt"],
+      "ingredients": [
+        "115g butter",
+        "150g sugar",
+        "1 egg",
+        "1 tsp vanilla extract",
+        "190g plain flour",
+        "0.5 tsp baking soda",
+        "0.25 tsp salt",
+        "150g chocolate chips"
+      ],
+      "steps": [
+        "Preheat oven to 180°C.",
+        "Cream butter and sugar until fluffy.",
+        "Add egg and vanilla extract.",
+        "Mix in flour, baking soda, and salt.",
+        "Stir in chocolate chips.",
+        "Drop spoonfuls onto a baking sheet.",
+        "Bake for 8-10 minutes until golden."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Peanut Butter Cookies",
+      "image": "https://via.placeholder.com/800x300?text=Peanut+Butter+Cookies",
+      "tags": ["peanut butter", "sugar", "eggs", "vanilla extract"],
+      "ingredients": [
+        "250g peanut butter",
+        "200g sugar",
+        "1 egg",
+        "1 tsp vanilla extract"
+      ],
+      "steps": [
+        "Preheat oven to 180°C.",
+        "Mix all ingredients until smooth.",
+        "Roll into balls and flatten with a fork.",
+        "Place on a baking sheet.",
+        "Bake for 10 minutes until edges are set."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Banana Bread",
+      "image": "https://via.placeholder.com/800x300?text=Banana+Bread",
+      "tags": ["bananas", "butter", "sugar", "self raising flour", "eggs", "vanilla extract", "cinnamon"],
+      "ingredients": [
+        "3 ripe bananas (mashed)",
+        "75g butter (melted)",
+        "150g sugar",
+        "2 eggs",
+        "1 tsp vanilla extract",
+        "200g self raising flour",
+        "1 tsp cinnamon"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and grease a loaf tin.",
+        "Mash bananas and mix with melted butter.",
+        "Add sugar, eggs, and vanilla extract.",
+        "Fold in flour and cinnamon.",
+        "Pour into tin.",
+        "Bake for 50 minutes until a skewer comes out clean."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Blueberry Muffins",
+      "image": "https://via.placeholder.com/800x300?text=Blueberry+Muffins",
+      "tags": ["self raising flour", "sugar", "butter", "milk", "eggs", "blueberry", "vanilla extract"],
+      "ingredients": [
+        "250g self raising flour",
+        "150g sugar",
+        "75g butter (melted)",
+        "200ml milk",
+        "1 egg",
+        "1 tsp vanilla extract",
+        "150g blueberries"
+      ],
+      "steps": [
+        "Preheat oven to 200°C and line a muffin tin.",
+        "Mix flour and sugar in a bowl.",
+        "In another bowl, whisk melted butter, milk, egg, and vanilla.",
+        "Combine wet and dry ingredients gently.",
+        "Fold in blueberries.",
+        "Spoon into tin.",
+        "Bake for 20 minutes until risen and golden."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lemon Bars",
+      "image": "https://via.placeholder.com/800x300?text=Lemon+Bars",
+      "tags": ["plain flour", "butter", "icing sugar", "eggs", "sugar", "lemon juice", "lemon extract"],
+      "ingredients": [
+        "200g plain flour",
+        "100g icing sugar",
+        "150g butter (softened)",
+        "4 eggs",
+        "300g sugar",
+        "50g plain flour",
+        "150ml lemon juice",
+        "1 tsp lemon extract"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line a baking tin.",
+        "Mix 200g flour, icing sugar, and butter for base; press into tin.",
+        "Bake base for 20 minutes.",
+        "Whisk eggs, sugar, 50g flour, lemon juice, and extract for filling.",
+        "Pour over baked base.",
+        "Bake for another 20 minutes until set.",
+        "Cool and dust with extra icing sugar."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Chocolate Brownies",
+      "image": "https://via.placeholder.com/800x300?text=Chocolate+Brownies",
+      "tags": ["dark chocolate", "butter", "sugar", "eggs", "plain flour", "coco powder", "vanilla extract"],
+      "ingredients": [
+        "200g dark chocolate (chopped)",
+        "180g butter",
+        "250g sugar",
+        "3 eggs",
+        "1 tsp vanilla extract",
+        "100g plain flour",
+        "30g coco powder"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line a square tin.",
+        "Melt chocolate and butter together.",
+        "Stir in sugar, then eggs and vanilla.",
+        "Fold in flour and coco powder.",
+        "Pour into tin.",
+        "Bake for 25 minutes until fudgy."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cinnamon Rolls",
+      "image": "https://via.placeholder.com/800x300?text=Cinnamon+Rolls",
+      "tags": ["bread flour", "yeast", "milk", "butter", "sugar", "eggs", "cinnamon", "salt"],
+      "ingredients": [
+        "500g bread flour",
+        "7g yeast",
+        "300ml milk (warm)",
+        "100g butter (softened)",
+        "50g sugar",
+        "1 egg",
+        "1 tsp salt",
+        "Filling: 100g butter, 200g sugar, 2 tbsp cinnamon"
+      ],
+      "steps": [
+        "Dissolve yeast in warm milk.",
+        "Mix flour, sugar, salt, egg, and softened butter; add milk mixture.",
+        "Knead dough and let rise for 1 hour.",
+        "Roll out dough, spread filling, roll up, and cut into slices.",
+        "Place in tin and let rise for 30 minutes.",
+        "Bake at 190°C for 25 minutes."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Jam Tarts",
+      "image": "https://via.placeholder.com/800x300?text=Jam+Tarts",
+      "tags": ["plain flour", "butter", "sugar", "jam", "water"],
+      "ingredients": [
+        "200g plain flour",
+        "100g butter (cold, cubed)",
+        "50g sugar",
+        "2-3 tbsp water (cold)",
+        "Jam for filling (e.g., raspberry jam)"
+      ],
+      "steps": [
+        "Mix flour, butter, and sugar until crumbly.",
+        "Add water to form dough; chill for 30 minutes.",
+        "Roll out and cut circles to fit tart tin.",
+        "Fill with jam.",
+        "Bake at 180°C for 15 minutes until golden."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Vanilla Cupcakes",
+      "image": "https://via.placeholder.com/800x300?text=Vanilla+Cupcakes",
+      "tags": ["self raising flour", "butter", "sugar", "eggs", "vanilla extract", "milk"],
+      "ingredients": [
+        "200g self raising flour",
+        "200g butter (softened)",
+        "200g sugar",
+        "4 eggs",
+        "2 tsp vanilla extract",
+        "50ml milk"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line a cupcake tin.",
+        "Cream butter and sugar.",
+        "Add eggs one at a time, then vanilla.",
+        "Fold in flour and milk.",
+        "Spoon into cases.",
+        "Bake for 20 minutes until sprung back."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Carrot Cake",
+      "image": "https://via.placeholder.com/800x300?text=Carrot+Cake",
+      "tags": ["plain flour", "sugar", "butter", "eggs", "carrots", "cinnamon", "nuts", "baking powder", "baking soda", "salt", "vanilla extract"],
+      "ingredients": [
+        "200g plain flour",
+        "200g sugar",
+        "150g butter (melted)",
+        "3 eggs",
+        "300g carrots (grated)",
+        "1 tsp cinnamon",
+        "100g nuts (chopped)",
+        "1 tsp baking powder",
+        "0.5 tsp baking soda",
+        "0.5 tsp salt",
+        "1 tsp vanilla extract"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and grease a cake tin.",
+        "Mix flour, baking powder, baking soda, salt, and cinnamon.",
+        "In another bowl, whisk sugar, eggs, butter, and vanilla.",
+        "Add grated carrots and nuts to wet mixture.",
+        "Combine with dry ingredients.",
+        "Pour into tin.",
+        "Bake for 40 minutes until firm."
+      ]
+    }
+  ]
+}

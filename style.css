@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+}
+
+.top-bar {
+  background: white;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  height: 50px;
+  margin: 5px 20px;
+}
+
+.welcome-section {
+  padding-top: 60px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.welcome-text {
+  max-width: 400px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  background: white;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.tag-popup {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  width: 400px;
+  max-height: 200px;
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: none;
+  padding: 10px;
+  z-index: 3;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+.tag span {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: fade 5s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.recipe-box {
+  background: blue;
+  border-radius: 10px;
+  width: 200px;
+  margin: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.recipe-box:hover {
+  transform: scale(1.05);
+}
+
+.recipe-box img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.recipe-box .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.result-title {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.search-results {
+  padding: 20px;
+}
+
+.result-box {
+  background: white;
+  border-radius: 10px;
+  margin: 10px 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.result-box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.no-results {
+  text-align: center;
+  font-size: 24px;
+  padding: 40px;
+}
+
+.recipe-content {
+  padding-top: 60px;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-name {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  margin: 20px 0;
+}
+
+.tags-horizontal {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ingredient-list, .steps-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ingredient-list li, .steps-list li {
+  margin-bottom: 10px;
+}
