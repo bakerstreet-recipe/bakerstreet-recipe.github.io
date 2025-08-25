@@ -23,7 +23,11 @@
         "Stir in chocolate chips.",
         "Drop spoonfuls onto a baking sheet.",
         "Bake for 8-10 minutes until golden."
-      ]
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes",
+      "servings": "24 cookies",
+      "difficulty": "Easy"
     },
     {
       "id": 2,
@@ -42,7 +46,11 @@
         "Roll into balls and flatten with a fork.",
         "Place on a baking sheet.",
         "Bake for 10 minutes until edges are set."
-      ]
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "10 minutes",
+      "servings": "20 cookies",
+      "difficulty": "Easy"
     },
     {
       "id": 3,
@@ -65,7 +73,11 @@
         "Fold in flour and cinnamon.",
         "Pour into tin.",
         "Bake for 50 minutes until a skewer comes out clean."
-      ]
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "50 minutes",
+      "servings": "8 slices",
+      "difficulty": "Medium"
     },
     {
       "id": 4,
@@ -89,7 +101,11 @@
         "Fold in blueberries.",
         "Spoon into tin.",
         "Bake for 20 minutes until risen and golden."
-      ]
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes",
+      "servings": "12 muffins",
+      "difficulty": "Easy"
     },
     {
       "id": 5,
@@ -114,7 +130,11 @@
         "Pour over baked base.",
         "Bake for another 20 minutes until set.",
         "Cool and dust with extra icing sugar."
-      ]
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "40 minutes",
+      "servings": "16 bars",
+      "difficulty": "Medium"
     },
     {
       "id": 6,
@@ -137,7 +157,11 @@
         "Fold in flour and coco powder.",
         "Pour into tin.",
         "Bake for 25 minutes until fudgy."
-      ]
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes",
+      "servings": "16 brownies",
+      "difficulty": "Easy"
     },
     {
       "id": 7,
@@ -161,7 +185,11 @@
         "Roll out dough, spread filling, roll up, and cut into slices.",
         "Place in tin and let rise for 30 minutes.",
         "Bake at 190°C for 25 minutes."
-      ]
+      ],
+      "prepTime": "30 minutes",
+      "cookTime": "25 minutes",
+      "servings": "12 rolls",
+      "difficulty": "Hard"
     },
     {
       "id": 8,
@@ -181,7 +209,11 @@
         "Roll out and cut circles to fit tart tin.",
         "Fill with jam.",
         "Bake at 180°C for 15 minutes until golden."
-      ]
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "15 minutes",
+      "servings": "12 tarts",
+      "difficulty": "Medium"
     },
     {
       "id": 9,
@@ -203,7 +235,11 @@
         "Fold in flour and milk.",
         "Spoon into cases.",
         "Bake for 20 minutes until sprung back."
-      ]
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes",
+      "servings": "12 cupcakes",
+      "difficulty": "Easy"
     },
     {
       "id": 10,
@@ -231,7 +267,11 @@
         "Combine with dry ingredients.",
         "Pour into tin.",
         "Bake for 40 minutes until firm."
-      ]
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "40 minutes",
+      "servings": "8 slices",
+      "difficulty": "Medium"
     }
   ]
 }
