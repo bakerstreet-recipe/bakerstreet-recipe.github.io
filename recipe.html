@@ -11,13 +11,35 @@
     <img src="logo.png" class="logo" alt="Logo">
   </div>
   <div class="recipe-content">
-    <img class="recipe-image" alt="Dish Image">
-    <h1 class="recipe-name"></h1>
-    <div class="tags-horizontal"></div>
-    <h2>Ingredients</h2>
-    <ul class="ingredient-list"></ul>
-    <h2>Steps</h2>
-    <ol class="steps-list"></ol>
+    <div class="recipe-header">
+      <img class="recipe-image" alt="Dish Image">
+      <h1 class="recipe-name"></h1>
+      <div class="recipe-info">
+        <span>Prep: <span class="prep-time"></span></span>
+        <span>Cook: <span class="cook-time"></span></span>
+        <span>Servings: <span class="servings"></span></span>
+        <span>Difficulty: <span class="difficulty"></span></span>
+      </div>
+      <div class="tags-horizontal"></div>
+    </div>
+    <div class="recipe-section">
+      <h2>Ingredients</h2>
+      <ul class="ingredient-list"></ul>
+    </div>
+    <div class="recipe-section">
+      <h2>Instructions</h2>
+      <ol class="steps-list"></ol>
+    </div>
+    <div class="related-recipes">
+      <h2>Related Recipes</h2>
+      <div class="related-carousel"></div>
+    </div>
+    <button class="back-button">Back to Search</button>
+    <div class="share-buttons">
+      <a href="#" class="share-btn">Share on Facebook</a>
+      <a href="#" class="share-btn">Share on Twitter</a>
+      <a href="#" class="share-btn">Share on Pinterest</a>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
