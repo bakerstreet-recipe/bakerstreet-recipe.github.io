@@ -135,46 +135,25 @@ body {
 
 .particles {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 100%;
   z-index: 1;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
 }
 
 .particle {
+  position: absolute;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: linear-gradient(to top, lightblue, white);
-  opacity: 0.7;
-  animation: wave 2s infinite ease-in-out;
+  opacity: 0;
   box-shadow: 0 0 10px rgba(173, 216, 230, 0.6);
 }
 
 .particle:nth-child(odd) {
   background: linear-gradient(to top, white, #87cefa);
-  animation-duration: 1.8s;
-  animation-delay: 0.3s;
-}
-
-.particle:nth-child(even) {
-  animation-duration: 2.2s;
-  animation-delay: 0.6s;
-}
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(-60px) scale(1.5);
-    opacity: 1;
-  }
 }
 
 .carousel-wrapper {
