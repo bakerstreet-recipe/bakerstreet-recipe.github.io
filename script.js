@@ -31,11 +31,29 @@ function getConsistentColor(tag) {
 
 function createParticles() {
   const container = document.querySelector('.particles');
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 30; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
-    particle.style.animationDelay = `${i * 0.05}s`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
     container.appendChild(particle);
+    
+    // Animate particle
+    const duration = Math.random() * 5 + 5; // 5-10s
+    const move = () => {
+      const x = Math.random() * 100 - 50; // -50 to 50px
+      const y = Math.random() * 100 - 50; // -50 to 50px
+      particle.animate([
+        { transform: 'translate(0, 0)', opacity: 0.7 },
+        { transform: `translate(${x}px, ${y}px)`, opacity: 0.3 },
+        { transform: 'translate(0, 0)', opacity: 0.7 }
+      ], {
+        duration: duration * 1000,
+        easing: 'ease-in-out',
+        iterations: Infinity
+      });
+    };
+    move();
   }
 }
 
@@ -179,7 +197,6 @@ function initRecipe() {
     stepsList.appendChild(li);
   });
 
-  // Related recipes
   const related = recipes.filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t))).slice(0, 3);
   const relatedCarousel = document.querySelector('.related-carousel');
   related.forEach(rel => {
