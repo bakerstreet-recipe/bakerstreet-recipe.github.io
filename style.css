@@ -3,55 +3,57 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: white;
+  background: linear-gradient(to bottom, #f8f9fa, white); /* Modern gradient background */
 }
 
 .top-bar {
   background: white;
-  height: 60px;
+  height: 70px; /* Slightly larger for modern feel */
   position: fixed;
   width: 100%;
   z-index: 10;
   border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .logo {
-  height: 50px;
-  margin: 5px 20px;
+  height: 60px; /* Larger logo */
+  margin: 5px 30px;
 }
 
 .welcome-section {
-  padding-top: 60px;
-  height: 180px;
+  padding-top: 70px;
+  height: 300px; /* Larger rectangle */
   position: relative;
   overflow: hidden;
-  background: #add8e6; /* Pastel blue */
+  background: linear-gradient(135deg, #add8e6, #87cefa); /* Modern pastel blue gradient */
 }
 
 .welcome-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   position: relative;
   z-index: 2;
-  padding: 20px;
+  padding: 40px;
 }
 
 .welcome-text {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .welcome-text h1 {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 36px; /* Larger font */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .welcome-text p {
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
 }
 
 .search-container {
@@ -61,88 +63,110 @@ body {
 .search-bar {
   display: flex;
   align-items: center;
-  width: 400px;
-  height: 40px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  padding: 0 10px;
+  width: 500px; /* Larger search bar */
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #bbb;
+  padding: 0 15px;
   background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s;
+}
+
+.search-bar:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 8px;
 }
 
 .input {
   border: none;
   outline: none;
   flex-grow: 1;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .tag-popup {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  width: 400px;
-  max-height: 200px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 500px;
+  max-height: 250px;
   overflow: auto;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   display: none;
-  padding: 10px;
+  padding: 15px;
   z-index: 3;
 }
 
 .tag {
   display: inline-block;
-  padding: 5px 10px;
-  border-radius: 15px;
+  padding: 8px 15px;
+  border-radius: 20px;
   margin: 5px;
   cursor: pointer;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.tag:hover {
+  transform: scale(1.05);
 }
 
 .tag span {
   cursor: pointer;
-  margin-left: 5px;
-  color: #888;
+  margin-left: 8px;
+  color: #777;
 }
 
 .particles {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100px; /* Confine to lower area for waveform effect */
   z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .particle {
-  position: absolute;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: lightblue;
-  opacity: 0;
-  animation: float 10s infinite ease-in-out;
+  background: linear-gradient(to top, lightblue, white); /* Gradient for modern glow */
+  opacity: 0.7;
+  animation: wave 2s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(173, 216, 230, 0.5); /* Subtle glow */
 }
 
-@keyframes float {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(1);
+.particle:nth-child(odd) {
+  background: linear-gradient(to top, white, #87cefa);
+  animation-duration: 1.5s; /* Vary for dynamic wave */
+  animation-delay: 0.2s;
+}
+
+.particle:nth-child(even) {
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
   }
   50% {
-    opacity: 0.8;
-    transform: translate(calc(50vw * (Math.random() - 0.5)), -50%) scale(1.2);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(100vw * (Math.random() - 0.5)), -100%) scale(1);
+    transform: translateY(-50px) scale(1.5); /* Pulse up like equalizer bars */
+    opacity: 1;
   }
 }
 
@@ -157,42 +181,42 @@ body {
 }
 
 .recipe-box {
-  background: #b3cde0; /* Pastel blue */
-  border-radius: 15px;
-  width: 300px;
-  margin: 20px;
+  background: linear-gradient(135deg, #b3cde0, #a1c4fd); /* Modern pastel gradient */
+  border-radius: 20px;
+  width: 350px; /* Larger boxes */
+  margin: 30px;
   color: #333;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .recipe-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 .recipe-box img {
-  width: 280px;
-  height: 180px;
+  width: 320px;
+  height: 220px; /* Larger images */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .recipe-box h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .recipe-box .tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
 }
 
 @keyframes scroll-right {
@@ -201,15 +225,15 @@ body {
 }
 
 .result-title {
-  padding-top: 80px;
+  padding-top: 100px; /* Adjusted for larger top bar */
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
   color: #333;
 }
 
 .search-results {
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -217,83 +241,83 @@ body {
 
 .result-box {
   background: white;
-  border-radius: 15px;
-  margin: 10px 20px;
-  padding: 20px;
-  width: calc(100% - 40px);
-  max-width: 800px;
+  border-radius: 20px;
+  margin: 15px 30px;
+  padding: 30px;
+  width: calc(100% - 60px); /* Larger, almost full width */
+  max-width: 1000px;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .result-box:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
 }
 
 .result-box h3 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .result-box p {
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
 }
 
 .no-results {
   text-align: center;
-  font-size: 24px;
-  padding: 40px;
+  font-size: 28px;
+  padding: 60px;
   color: #888;
 }
 
 .recipe-content {
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 .recipe-image {
   width: 100%;
-  height: 250px;
+  height: 300px; /* Larger image */
   object-fit: cover;
 }
 
 .recipe-name {
   text-align: center;
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 700;
   color: #333;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .tags-horizontal {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .ingredient-list, .steps-list {
-  max-width: 800px;
+  max-width: 1000px; /* Larger content area */
   margin: 0 auto;
-  padding: 0 20px;
-  font-size: 16px;
+  padding: 0 30px;
+  font-size: 18px;
   color: #444;
 }
 
 .ingredient-list li, .steps-list li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
   color: #333;
-  margin: 20px 0 10px;
+  margin: 30px 0 15px;
   text-align: center;
 }
