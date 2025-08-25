@@ -29,16 +29,10 @@ function getPastelColor() {
 
 function createParticles() {
   const container = document.querySelector('.particles');
-  for (let i = 0; i < 30; i++) { // More particles for better effect
+  for (let i = 0; i < 40; i++) { // More particles for waveform density
     const particle = document.createElement('div');
     particle.classList.add('particle');
-    particle.style.width = `${Math.random() * 8 + 4}px`;
-    particle.style.height = particle.style.width;
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
-    particle.style.background = Math.random() > 0.5 ? '#add8e6' : 'white';
-    particle.style.animationDuration = `${Math.random() * 6 + 4}s`;
-    particle.style.animationDelay = `${Math.random() * 5}s`;
+    particle.style.animationDelay = `${i * 0.05}s`; // Stagger for wave effect
     container.appendChild(particle);
   }
 }
@@ -116,7 +110,6 @@ function initHome() {
     });
     return fragment;
   };
-  // For rightward movement, duplicate and append at end, but animation is from 0 to 100%
   carousel.appendChild(createBoxes());
   carousel.appendChild(createBoxes()); // Duplicate for seamless loop
 }
