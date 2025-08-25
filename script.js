@@ -1,5 +1,6 @@
 let recipes = [];
 let uniqueTags = [];
+const colorPalette = ['#FFB3BA', '#FFDFBA', '#FFFFBA', '#BAFFB3', '#BAE1FF', '#D4A5A5', '#FFD3B6', '#FFAAA5', '#C7CEEA', '#B5EAD7'];
 
 fetch('recipes.json')
   .then(res => res.json())
@@ -20,19 +21,20 @@ function initPage() {
   }
 }
 
-function getPastelColor() {
-  const r = Math.floor(Math.random() * 127 + 128);
-  const g = Math.floor(Math.random() * 127 + 128);
-  const b = Math.floor(Math.random() * 127 + 128);
-  return `rgb(${r}, ${g}, ${b})`;
+function getConsistentColor(tag) {
+  let hash = 0;
+  for (let i = 0; i < tag.length; i++) {
+    hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return colorPalette[Math.abs(hash) % colorPalette.length];
 }
 
 function createParticles() {
   const container = document.querySelector('.particles');
-  for (let i = 0; i < 40; i++) { // More particles for waveform density
+  for (let i = 0; i < 40; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
-    particle.style.animationDelay = `${i * 0.05}s`; // Stagger for wave effect
+    particle.style.animationDelay = `${i * 0.05}s`;
     container.appendChild(particle);
   }
 }
@@ -54,7 +56,7 @@ function initHome() {
         matching.forEach(t => {
           const tagEl = document.createElement('div');
           tagEl.classList.add('tag');
-          tagEl.style.background = getPastelColor();
+          tagEl.style.background = getConsistentColor(t);
           tagEl.textContent = t;
           tagEl.addEventListener('click', () => {
             addTag(t);
@@ -77,7 +79,7 @@ function initHome() {
       selectedTags.push(tag);
       const tagSpan = document.createElement('span');
       tagSpan.classList.add('tag');
-      tagSpan.style.background = getPastelColor();
+      tagSpan.style.background = getConsistentColor(tag);
       tagSpan.innerHTML = `${tag}<span> x</span>`;
       tagSpan.querySelector('span').addEventListener('click', () => {
         tagSpan.remove();
@@ -103,7 +105,7 @@ function initHome() {
       box.innerHTML = `
         <img src="${r.image}" alt="${r.name}">
         <h3>${r.name}</h3>
-        <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getPastelColor()}">${t}</span>`).join('')}</div>
+        <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join('')}</div>
       `;
       box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
       fragment.appendChild(box);
@@ -111,7 +113,7 @@ function initHome() {
     return fragment;
   };
   carousel.appendChild(createBoxes());
-  carousel.appendChild(createBoxes()); // Duplicate for seamless loop
+  carousel.appendChild(createBoxes());
 }
 
 function initSearch() {
@@ -120,7 +122,7 @@ function initSearch() {
   if (!ingredientsStr) return;
 
   const userIngredients = ingredientsStr.split(',').map(t => t.trim().toLowerCase());
-  document.getElementById('search-tags').innerHTML = userIngredients.map(t => `<span class="tag" style="background:${getPastelColor()}">${t}</span>`).join(' ');
+  document.getElementById('search-tags').innerHTML = userIngredients.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join(' ');
 
   const resultsDiv = document.querySelector('.search-results');
   const matchingRecipes = recipes.filter(r => userIngredients.every(ui => r.tags.map(t => t.toLowerCase()).includes(ui)));
@@ -146,12 +148,20 @@ function initRecipe() {
   document.querySelector('.recipe-image').src = recipe.image;
   document.querySelector('.recipe-name').textContent = recipe.name;
 
+  document.querySelector('.prep-time').textContent = recipe.prepTime;
+  document.querySelector('.cook-time').textContent = recipe.cookTime;
+  document.querySelector('.servings').textContent = recipe.servings;
+  document.querySelector('.difficulty').textContent = recipe.difficulty;
+
   const tagsDiv = document.querySelector('.tags-horizontal');
   recipe.tags.forEach(t => {
     const tag = document.createElement('span');
     tag.classList.add('tag');
-    tag.style.background = getPastelColor();
+    tag.style.background = getConsistentColor(t);
     tag.textContent = t;
+    tag.addEventListener('click', () => {
+      window.location.href = `search.html?ingredients=${t}`;
+    });
     tagsDiv.appendChild(tag);
   });
 
@@ -168,4 +178,20 @@ function initRecipe() {
     li.textContent = s;
     stepsList.appendChild(li);
   });
+
+  // Related recipes
+  const related = recipes.filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t))).slice(0, 3);
+  const relatedCarousel = document.querySelector('.related-carousel');
+  related.forEach(rel => {
+    const box = document.createElement('div');
+    box.classList.add('related-box');
+    box.innerHTML = `
+      <img src="${rel.image}" alt="${rel.name}">
+      <h3>${rel.name}</h3>
+    `;
+    box.addEventListener('click', () => window.location.href = `recipe.html?id=${rel.id}`);
+    relatedCarousel.appendChild(box);
+  });
+
+  document.querySelector('.back-button').addEventListener('click', () => history.back());
 }
