@@ -104,24 +104,27 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   width: 600px;
   max-height: 300px;
-  overflow: auto;
+  overflow: hidden; /* Hide overflow to control scrolling */
   position: absolute;
   top: 70px;
   left: 0;
   display: none;
   padding: 20px;
   z-index: 3;
-  animation: slideFromRight 0.3s ease-out forwards;
 }
 
-@keyframes slideFromRight {
+.tag-popup-content {
+  display: flex;
+  width: max-content; /* Allow content to expand beyond container width */
+  animation: scrollLeft 15s linear infinite; /* Continuous scroll left */
+}
+
+@keyframes scrollLeft {
   from {
-    transform: translateX(100%);
-    opacity: 0;
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(-100%);
   }
 }
 
@@ -134,6 +137,7 @@ body {
   color: #333;
   font-size: 18px;
   transition: transform 0.2s;
+  white-space: nowrap; /* Prevent tags from wrapping */
 }
 
 .tag:hover {
