@@ -3,11 +3,19 @@ let uniqueTags = [];
 const colorPalette = ['#FFB3BA', '#FFDFBA', '#FFFFBA', '#BAFFB3', '#BAE1FF', '#D4A5A5', '#FFD3B6', '#FFAAA5', '#C7CEEA', '#B5EAD7'];
 
 fetch('recipes.json')
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error('Failed to load recipes.json');
+    return res.json();
+  })
   .then(data => {
+    if (!data.recipes) throw new Error('Invalid recipes data');
     recipes = data.recipes;
     uniqueTags = [...new Set(recipes.flatMap(r => r.tags))].sort();
     initPage();
+  })
+  .catch(error => {
+    console.error('Error loading recipes:', error);
+    // Fallback UI (e.g., alert or placeholder) could be added here
   });
 
 function initPage() {
@@ -19,10 +27,12 @@ function initPage() {
   } else if (path.endsWith('recipe.html')) {
     initRecipe();
   }
-  // Add logo click event to all pages
-  document.querySelector('.logo').addEventListener('click', () => {
-    window.location.href = 'index.html';
-  });
+  const logo = document.querySelector('.logo');
+  if (logo) {
+    logo.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  }
 }
 
 function getConsistentColor(tag) {
@@ -35,29 +45,30 @@ function getConsistentColor(tag) {
 
 function createParticles() {
   const container = document.querySelector('.particles');
-  for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
-    container.appendChild(particle);
-    
-    // Animate particle
-    const duration = Math.random() * 5 + 5; // 5-10s
-    const move = () => {
-      const x = Math.random() * 100 - 50; // -50 to 50px
-      const y = Math.random() * 100 - 50; // -50 to 50px
-      particle.animate([
-        { transform: 'translate(0, 0)', opacity: 0.7 },
-        { transform: `translate(${x}px, ${y}px)`, opacity: 0.3 },
-        { transform: 'translate(0, 0)', opacity: 0.7 }
-      ], {
-        duration: duration * 1000,
-        easing: 'ease-in-out',
-        iterations: Infinity
-      });
-    };
-    move();
+  if (container) {
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      container.appendChild(particle);
+      
+      const duration = Math.random() * 5 + 5; // 5-10s
+      const move = () => {
+        const x = Math.random() * 100 - 50; // -50 to 50px
+        const y = Math.random() * 100 - 50; // -50 to 50px
+        particle.animate([
+          { transform: 'translate(0, 0)', opacity: 0.7 },
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0.3 },
+          { transform: 'translate(0, 0)', opacity: 0.7 }
+        ], {
+          duration: duration * 1000,
+          easing: 'ease-in-out',
+          iterations: Infinity
+        });
+      };
+      move();
+    }
   }
 }
 
@@ -67,6 +78,8 @@ function initHome() {
   const tagContainer = document.querySelector('.tags-container');
   const input = document.querySelector('.input');
   const popup = document.querySelector('.tag-popup');
+  if (!tagContainer || !input || !popup) return;
+
   let selectedTags = [];
 
   input.addEventListener('input', (e) => {
@@ -118,24 +131,25 @@ function initHome() {
   });
 
   const carousel = document.querySelector('.carousel');
-  const randomRecipes = [...recipes].sort(() => 0.5 - Math.random()).slice(0, 5);
-  const createBoxes = () => {
-    const fragment = document.createDocumentFragment();
-    randomRecipes.forEach(r => {
-      const box = document.createElement('div');
-      box.classList.add('recipe-box');
-      box.innerHTML = `
-        <img src="${r.image}" alt="${r.name}">
-        <h3>${r.name}</h3>
-        <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join('')}</div>
-      `;
-      box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
-      fragment.appendChild(box);
-    });
-    return fragment;
-  };
-  carousel.appendChild(createBoxes());
-  carousel.appendChild(createBoxes());
+  if (carousel && recipes.length > 0) {
+    const randomRecipes = [...recipes].sort(() => 0.5 - Math.random()).slice(0, 5);
+    const createBoxes = () => {
+      const fragment = document.createDocumentFragment();
+      randomRecipes.forEach(r => {
+        const box = document.createElement('div');
+        box.classList.add('recipe-box');
+        box.innerHTML = `
+          <img src="${r.image}" alt="${r.name}">
+          <h3>${r.name}</h3>
+          <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join('')}</div>
+        `;
+        box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
+        fragment.appendChild(box);
+      });
+      return fragment;
+    };
+    carousel.appendChild(createBoxes()); // Removed duplicate append for simplicity
+  }
 }
 
 function initSearch() {
@@ -144,20 +158,26 @@ function initSearch() {
   if (!ingredientsStr) return;
 
   const userIngredients = ingredientsStr.split(',').map(t => t.trim().toLowerCase());
-  document.getElementById('search-tags').innerHTML = userIngredients.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join(' ');
+  const searchTags = document.getElementById('search-tags');
+  if (searchTags) {
+    searchTags.innerHTML = userIngredients.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join(' ');
+  }
 
   const resultsDiv = document.querySelector('.search-results');
-  const matchingRecipes = recipes.filter(r => userIngredients.every(ui => r.tags.map(t => t.toLowerCase()).includes(ui)));
-  if (matchingRecipes.length === 0) {
-    resultsDiv.innerHTML = '<div class="no-results">No Results Found</div>';
-  } else {
-    matchingRecipes.forEach(r => {
-      const box = document.createElement('div');
-      box.classList.add('result-box');
-      box.innerHTML = `<h3>${r.name}</h3><p>Ingredients: ${r.tags.join(', ')}</p>`;
-      box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
-      resultsDiv.appendChild(box);
-    });
+  if (resultsDiv && recipes.length > 0) {
+    const matchingRecipes = recipes.filter(r => userIngredients.every(ui => r.tags.map(t => t.toLowerCase()).includes(ui)));
+    if (matchingRecipes.length === 0) {
+      resultsDiv.innerHTML = '<div class="no-results">No Results Found</div>';
+    } else {
+      resultsDiv.innerHTML = ''; // Clear previous results
+      matchingRecipes.forEach(r => {
+        const box = document.createElement('div');
+        box.classList.add('result-box');
+        box.innerHTML = `<h3>${r.name}</h3><p>Ingredients: ${r.tags.join(', ')}</p>`;
+        box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
+        resultsDiv.appendChild(box);
+      });
+    }
   }
 }
 
@@ -167,52 +187,73 @@ function initRecipe() {
   const recipe = recipes.find(r => r.id === id);
   if (!recipe) return;
 
-  document.querySelector('.recipe-image').src = recipe.image;
-  document.querySelector('.recipe-name').textContent = recipe.name;
-
-  document.querySelector('.prep-time').textContent = recipe.prepTime;
-  document.querySelector('.cook-time').textContent = recipe.cookTime;
-  document.querySelector('.servings').textContent = recipe.servings;
-  document.querySelector('.difficulty').textContent = recipe.difficulty;
-
+  const image = document.querySelector('.recipe-image');
+  const name = document.querySelector('.recipe-name');
+  const prepTime = document.querySelector('.prep-time');
+  const cookTime = document.querySelector('.cook-time');
+  const servings = document.querySelector('.servings');
+  const difficulty = document.querySelector('.difficulty');
   const tagsDiv = document.querySelector('.tags-horizontal');
-  recipe.tags.forEach(t => {
-    const tag = document.createElement('span');
-    tag.classList.add('tag');
-    tag.style.background = getConsistentColor(t);
-    tag.textContent = t;
-    tag.addEventListener('click', () => {
-      window.location.href = `search.html?ingredients=${t}`;
-    });
-    tagsDiv.appendChild(tag);
-  });
-
   const ingList = document.querySelector('.ingredient-list');
-  recipe.ingredients.forEach(i => {
-    const li = document.createElement('li');
-    li.textContent = i;
-    ingList.appendChild(li);
-  });
-
   const stepsList = document.querySelector('.steps-list');
-  recipe.steps.forEach(s => {
-    const li = document.createElement('li');
-    li.textContent = s;
-    stepsList.appendChild(li);
-  });
-
-  const related = recipes.filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t))).slice(0, 3);
   const relatedCarousel = document.querySelector('.related-carousel');
-  related.forEach(rel => {
-    const box = document.createElement('div');
-    box.classList.add('related-box');
-    box.innerHTML = `
-      <img src="${rel.image}" alt="${rel.name}">
-      <h3>${rel.name}</h3>
-    `;
-    box.addEventListener('click', () => window.location.href = `recipe.html?id=${rel.id}`);
-    relatedCarousel.appendChild(box);
-  });
+  const backButton = document.querySelector('.back-button');
 
-  document.querySelector('.back-button').addEventListener('click', () => history.back());
+  if (image) image.src = recipe.image;
+  if (name) name.textContent = recipe.name;
+  if (prepTime) prepTime.textContent = recipe.prepTime;
+  if (cookTime) cookTime.textContent = recipe.cookTime;
+  if (servings) servings.textContent = recipe.servings;
+  if (difficulty) difficulty.textContent = recipe.difficulty;
+
+  if (tagsDiv) {
+    tagsDiv.innerHTML = '';
+    recipe.tags.forEach(t => {
+      const tag = document.createElement('span');
+      tag.classList.add('tag');
+      tag.style.background = getConsistentColor(t);
+      tag.textContent = t;
+      tag.addEventListener('click', () => {
+        window.location.href = `search.html?ingredients=${t}`;
+      });
+      tagsDiv.appendChild(tag);
+    });
+  }
+
+  if (ingList) {
+    ingList.innerHTML = '';
+    recipe.ingredients.forEach(i => {
+      const li = document.createElement('li');
+      li.textContent = i;
+      ingList.appendChild(li);
+    });
+  }
+
+  if (stepsList) {
+    stepsList.innerHTML = '';
+    recipe.steps.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      stepsList.appendChild(li);
+    });
+  }
+
+  if (relatedCarousel && recipes.length > 0) {
+    relatedCarousel.innerHTML = '';
+    const related = recipes.filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t))).slice(0, 3);
+    related.forEach(rel => {
+      const box = document.createElement('div');
+      box.classList.add('related-box');
+      box.innerHTML = `
+        <img src="${rel.image}" alt="${rel.name}">
+        <h3>${rel.name}</h3>
+      `;
+      box.addEventListener('click', () => window.location.href = `recipe.html?id=${rel.id}`);
+      relatedCarousel.appendChild(box);
+    });
+  }
+
+  if (backButton) {
+    backButton.addEventListener('click', () => history.back());
+  }
 }
