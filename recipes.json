@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Chocolate Chip Cookies",
-      "image": "https://via.placeholder.com/800x300?text=Chocolate+Chip+Cookies",
+      "image": "1.png",
       "tags": ["butter", "sugar", "plain flour", "chocolate chips", "vanilla extract", "eggs", "baking soda", "salt"],
       "ingredients": [
         "115g butter",
@@ -32,7 +32,7 @@
     {
       "id": 2,
       "name": "Peanut Butter Cookies",
-      "image": "https://via.placeholder.com/800x300?text=Peanut+Butter+Cookies",
+      "image": "2.png",
       "tags": ["peanut butter", "sugar", "eggs", "vanilla extract"],
       "ingredients": [
         "250g peanut butter",
@@ -55,7 +55,7 @@
     {
       "id": 3,
       "name": "Banana Bread",
-      "image": "https://via.placeholder.com/800x300?text=Banana+Bread",
+      "image": "3.png",
       "tags": ["bananas", "butter", "sugar", "self raising flour", "eggs", "vanilla extract", "cinnamon"],
       "ingredients": [
         "3 ripe bananas (mashed)",
@@ -82,7 +82,7 @@
     {
       "id": 4,
       "name": "Blueberry Muffins",
-      "image": "https://via.placeholder.com/800x300?text=Blueberry+Muffins",
+      "image": "4.png",
       "tags": ["self raising flour", "sugar", "butter", "milk", "eggs", "blueberry", "vanilla extract"],
       "ingredients": [
         "250g self raising flour",
@@ -110,7 +110,7 @@
     {
       "id": 5,
       "name": "Lemon Bars",
-      "image": "https://via.placeholder.com/800x300?text=Lemon+Bars",
+      "image": "5.png",
       "tags": ["plain flour", "butter", "icing sugar", "eggs", "sugar", "lemon juice", "lemon extract"],
       "ingredients": [
         "200g plain flour",
@@ -139,7 +139,7 @@
     {
       "id": 6,
       "name": "Chocolate Brownies",
-      "image": "https://via.placeholder.com/800x300?text=Chocolate+Brownies",
+      "image": "6.png",
       "tags": ["dark chocolate", "butter", "sugar", "eggs", "plain flour", "coco powder", "vanilla extract"],
       "ingredients": [
         "200g dark chocolate (chopped)",
@@ -166,7 +166,7 @@
     {
       "id": 7,
       "name": "Cinnamon Rolls",
-      "image": "https://via.placeholder.com/800x300?text=Cinnamon+Rolls",
+      "image": "7.png",
       "tags": ["bread flour", "yeast", "milk", "butter", "sugar", "eggs", "cinnamon", "salt"],
       "ingredients": [
         "500g bread flour",
@@ -194,7 +194,7 @@
     {
       "id": 8,
       "name": "Jam Tarts",
-      "image": "https://via.placeholder.com/800x300?text=Jam+Tarts",
+      "image": "8.png",
       "tags": ["plain flour", "butter", "sugar", "jam", "water"],
       "ingredients": [
         "200g plain flour",
@@ -218,7 +218,7 @@
     {
       "id": 9,
       "name": "Vanilla Cupcakes",
-      "image": "https://via.placeholder.com/800x300?text=Vanilla+Cupcakes",
+      "image": "9.png",
       "tags": ["self raising flour", "butter", "sugar", "eggs", "vanilla extract", "milk"],
       "ingredients": [
         "200g self raising flour",
@@ -244,7 +244,7 @@
     {
       "id": 10,
       "name": "Carrot Cake",
-      "image": "https://via.placeholder.com/800x300?text=Carrot+Cake",
+      "image": "10.png",
       "tags": ["plain flour", "sugar", "butter", "eggs", "carrots", "cinnamon", "nuts", "baking powder", "baking soda", "salt", "vanilla extract"],
       "ingredients": [
         "200g plain flour",
