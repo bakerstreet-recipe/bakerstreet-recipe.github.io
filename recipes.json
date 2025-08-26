@@ -273,5 +273,528 @@
       "servings": "8 slices",
       "difficulty": "Medium"
     }
-  ]
-}
+    {
+      "id": 11,
+      "name": "Oatmeal Raisin Cookies",
+      "image": "11.png",
+      "tags": ["oats", "plain flour", "butter", "brown sugar", "eggs", "raisins", "cinnamon", "baking soda", "salt", "vanilla extract"],
+      "ingredients": [
+        "115g butter",
+        "150g brown sugar",
+        "1 egg",
+        "1 tsp vanilla extract",
+        "140g plain flour",
+        "0.5 tsp baking soda",
+        "0.25 tsp salt",
+        "1 tsp cinnamon",
+        "150g rolled oats",
+        "120g raisins"
+      ],
+      "steps": [
+        "Preheat oven to 180°C.",
+        "Cream butter and sugar; beat in egg and vanilla.",
+        "Mix flour, baking soda, salt, and cinnamon; add to bowl.",
+        "Stir in oats and raisins.",
+        "Scoop onto tray and flatten slightly.",
+        "Bake 10-12 minutes until edges set."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "12 minutes",
+      "servings": "20 cookies",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 12,
+      "name": "Red Velvet Cupcakes",
+      "image": "12.png",
+      "tags": ["plain flour", "cocoa powder", "butter", "sugar", "eggs", "buttermilk", "vinegar", "baking soda", "vanilla extract", "food colouring"],
+      "ingredients": [
+        "200g plain flour",
+        "15g cocoa powder",
+        "150g sugar",
+        "100g butter (softened)",
+        "2 eggs",
+        "150ml buttermilk",
+        "1 tsp vanilla extract",
+        "0.5 tsp baking soda",
+        "1 tsp vinegar",
+        "Red food colouring (as needed)"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line a cupcake tin.",
+        "Cream butter and sugar; beat in eggs and vanilla.",
+        "Mix flour and cocoa; add alternately with buttermilk and colouring.",
+        "Combine vinegar and baking soda; fold in.",
+        "Fill cases 2/3 full.",
+        "Bake 18-20 minutes until springy."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "20 minutes",
+      "servings": "12 cupcakes",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 13,
+      "name": "Victoria Sponge",
+      "image": "13.png",
+      "tags": ["self raising flour", "butter", "sugar", "eggs", "vanilla extract", "jam", "cream"],
+      "ingredients": [
+        "200g self raising flour",
+        "200g butter (softened)",
+        "200g sugar",
+        "4 eggs",
+        "1 tsp vanilla extract",
+        "100g strawberry jam",
+        "150ml double cream (whipped)"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and grease two 20cm tins.",
+        "Cream butter and sugar; beat in eggs and vanilla.",
+        "Fold in flour.",
+        "Divide into tins and bake 20-22 minutes.",
+        "Cool, then sandwich with jam and whipped cream.",
+        "Dust with icing sugar."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "22 minutes",
+      "servings": "10 slices",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 14,
+      "name": "Lemon Drizzle Cake",
+      "image": "14.png",
+      "tags": ["self raising flour", "butter", "sugar", "eggs", "lemon", "icing sugar"],
+      "ingredients": [
+        "200g self raising flour",
+        "200g butter (softened)",
+        "200g sugar",
+        "4 eggs",
+        "2 lemons (zest)",
+        "Juice of 2 lemons",
+        "150g icing sugar"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line a loaf tin.",
+        "Cream butter and sugar; beat in eggs and lemon zest.",
+        "Fold in flour; pour into tin.",
+        "Bake 45-50 minutes.",
+        "Mix lemon juice with icing sugar and pour over warm cake.",
+        "Cool before slicing."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "50 minutes",
+      "servings": "10 slices",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 15,
+      "name": "Shortbread",
+      "image": "15.png",
+      "tags": ["plain flour", "butter", "sugar", "cornflour", "salt"],
+      "ingredients": [
+        "225g butter (softened)",
+        "100g sugar",
+        "225g plain flour",
+        "100g cornflour",
+        "Pinch of salt"
+      ],
+      "steps": [
+        "Preheat oven to 160°C.",
+        "Beat butter and sugar until pale.",
+        "Mix in flour, cornflour, and salt to form a dough.",
+        "Press into lined tin; prick with fork.",
+        "Bake 30-35 minutes until lightly golden.",
+        "Cool and cut into fingers."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "35 minutes",
+      "servings": "16 fingers",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 16,
+      "name": "Cheesecake (No-Bake)",
+      "image": "16.png",
+      "tags": ["biscuits", "butter", "cream cheese", "icing sugar", "vanilla", "double cream", "lemon"],
+      "ingredients": [
+        "250g digestive biscuits (crushed)",
+        "100g butter (melted)",
+        "500g cream cheese",
+        "100g icing sugar",
+        "1 tsp vanilla extract",
+        "250ml double cream",
+        "1 tbsp lemon juice"
+      ],
+      "steps": [
+        "Combine biscuits with melted butter; press into springform tin and chill.",
+        "Beat cream cheese, icing sugar, vanilla, and lemon.",
+        "Whip cream to soft peaks and fold in.",
+        "Spread over base; smooth top.",
+        "Chill 4 hours until set."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "0 minutes",
+      "servings": "12 slices",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 17,
+      "name": "Apple Crumble",
+      "image": "17.png",
+      "tags": ["apples", "plain flour", "butter", "sugar", "cinnamon", "oats"],
+      "ingredients": [
+        "700g apples (peeled, sliced)",
+        "50g sugar",
+        "1 tsp cinnamon",
+        "150g plain flour",
+        "75g butter (cold, cubed)",
+        "75g sugar",
+        "50g oats"
+      ],
+      "steps": [
+        "Preheat oven to 180°C.",
+        "Toss apples with sugar and cinnamon; place in dish.",
+        "Rub butter into flour to breadcrumbs; stir in sugar and oats.",
+        "Top apples with crumble.",
+        "Bake 35-40 minutes until golden and bubbling."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "40 minutes",
+      "servings": "6 portions",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 18,
+      "name": "Chocolate Cake",
+      "image": "18.png",
+      "tags": ["self raising flour", "cocoa powder", "sugar", "butter", "eggs", "milk", "vanilla extract"],
+      "ingredients": [
+        "200g self raising flour",
+        "40g cocoa powder",
+        "200g sugar",
+        "200g butter (softened)",
+        "4 eggs",
+        "60ml milk",
+        "1 tsp vanilla extract"
+      ],
+      "steps": [
+        "Preheat oven to 180°C; grease two 20cm tins.",
+        "Beat butter and sugar; add eggs and vanilla.",
+        "Fold in flour and cocoa with milk.",
+        "Divide between tins; bake 22-25 minutes.",
+        "Cool and fill/ice as desired."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes",
+      "servings": "10 slices",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 19,
+      "name": "Scones",
+      "image": "19.png",
+      "tags": ["self raising flour", "butter", "milk", "sugar", "salt", "egg"],
+      "ingredients": [
+        "250g self raising flour",
+        "50g butter (cold, cubed)",
+        "25g sugar",
+        "Pinch of salt",
+        "150ml milk",
+        "1 egg (for glaze)"
+      ],
+      "steps": [
+        "Preheat oven to 200°C.",
+        "Rub butter into flour, sugar, and salt.",
+        "Stir in milk to form soft dough.",
+        "Pat to 2.5cm thick; cut rounds.",
+        "Brush with egg and bake 12-14 minutes."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "14 minutes",
+      "servings": "8 scones",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 20,
+      "name": "Pancakes",
+      "image": "20.png",
+      "tags": ["plain flour", "milk", "eggs", "butter", "sugar", "salt"],
+      "ingredients": [
+        "200g plain flour",
+        "2 tbsp sugar",
+        "Pinch of salt",
+        "2 eggs",
+        "300ml milk",
+        "30g butter (melted)"
+      ],
+      "steps": [
+        "Whisk flour, sugar, and salt; add eggs and milk.",
+        "Stir in melted butter; rest 10 minutes.",
+        "Heat pan; pour batter to coat.",
+        "Cook 1-2 minutes per side until golden.",
+        "Serve with toppings."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes",
+      "servings": "10 pancakes",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 21,
+      "name": "Gingerbread Men",
+      "image": "21.png",
+      "tags": ["plain flour", "butter", "brown sugar", "golden syrup", "egg", "ginger", "cinnamon", "bicarbonate of soda", "salt"],
+      "ingredients": [
+        "350g plain flour",
+        "100g butter",
+        "100g brown sugar",
+        "4 tbsp golden syrup",
+        "1 egg",
+        "1 tsp ground ginger",
+        "0.5 tsp cinnamon",
+        "1 tsp bicarbonate of soda",
+        "Pinch of salt"
+      ],
+      "steps": [
+        "Preheat oven to 180°C.",
+        "Melt butter with syrup; cool slightly.",
+        "Mix dry ingredients; add syrup mix and egg to form dough.",
+        "Roll out; cut shapes.",
+        "Bake 10-12 minutes; cool and decorate."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "12 minutes",
+      "servings": "24 biscuits",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 22,
+      "name": "Chocolate Chip Banana Muffins",
+      "image": "22.png",
+      "tags": ["self raising flour", "bananas", "sugar", "butter", "eggs", "vanilla extract", "chocolate chips"],
+      "ingredients": [
+        "250g self raising flour",
+        "2 ripe bananas (mashed)",
+        "100g sugar",
+        "80g butter (melted)",
+        "2 eggs",
+        "1 tsp vanilla extract",
+        "120g chocolate chips"
+      ],
+      "steps": [
+        "Preheat oven to 180°C and line tin.",
+        "Mix mashed bananas, sugar, eggs, butter, and vanilla.",
+        "Fold in flour and chips.",
+        "Divide into cases.",
+        "Bake 18-20 minutes."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes",
+      "servings": "12 muffins",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 23,
+      "name": "Chocolate Mousse",
+      "image": "23.png",
+      "tags": ["dark chocolate", "eggs", "sugar", "cream", "vanilla"],
+      "ingredients": [
+        "200g dark chocolate",
+        "3 eggs (separated)",
+        "50g sugar",
+        "200ml double cream",
+        "0.5 tsp vanilla extract"
+      ],
+      "steps": [
+        "Melt chocolate; cool slightly.",
+        "Whip cream to soft peaks.",
+        "Beat egg whites with sugar to stiff peaks.",
+        "Stir yolks and vanilla into chocolate.",
+        "Fold in cream, then whites.",
+        "Chill 2 hours."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "0 minutes",
+      "servings": "6 portions",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 24,
+      "name": "Brown Butter Blondies",
+      "image": "24.png",
+      "tags": ["butter", "brown sugar", "plain flour", "eggs", "vanilla extract", "salt", "white chocolate"],
+      "ingredients": [
+        "170g butter (browned)",
+        "220g brown sugar",
+        "2 eggs",
+        "2 tsp vanilla extract",
+        "220g plain flour",
+        "0.5 tsp salt",
+        "150g white chocolate (chopped)"
+      ],
+      "steps": [
+        "Preheat oven to 175°C; line 20cm tin.",
+        "Whisk browned butter with sugar; cool.",
+        "Beat in eggs and vanilla.",
+        "Fold in flour and salt; add chocolate.",
+        "Bake 22-25 minutes until set at edges."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes",
+      "servings": "16 squares",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 25,
+      "name": "Classic Crêpes",
+      "image": "25.png",
+      "tags": ["plain flour", "milk", "eggs", "butter", "sugar", "salt"],
+      "ingredients": [
+        "250g plain flour",
+        "2 tbsp sugar",
+        "Pinch of salt",
+        "3 eggs",
+        "500ml milk",
+        "30g butter (melted)"
+      ],
+      "steps": [
+        "Blend flour, sugar, salt, eggs, and milk; rest 20 minutes.",
+        "Stir in melted butter.",
+        "Cook thin layers in hot pan 1 minute per side.",
+        "Serve with lemon and sugar or fillings."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes",
+      "servings": "14 crêpes",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 26,
+      "name": "Chocolate Chip Scones",
+      "image": "26.png",
+      "tags": ["self raising flour", "butter", "sugar", "milk", "chocolate chips", "salt"],
+      "ingredients": [
+        "300g self raising flour",
+        "60g butter (cold)",
+        "40g sugar",
+        "Pinch of salt",
+        "160ml milk",
+        "120g chocolate chips"
+      ],
+      "steps": [
+        "Heat oven to 200°C.",
+        "Rub butter into flour, sugar, and salt.",
+        "Stir in chips and milk to form dough.",
+        "Pat to 2.5cm; cut triangles.",
+        "Bake 12-15 minutes."
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes",
+      "servings": "8 scones",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 27,
+      "name": "Berry Pavlova",
+      "image": "27.png",
+      "tags": ["egg whites", "sugar", "cornflour", "vinegar", "vanilla", "cream", "berries"],
+      "ingredients": [
+        "4 egg whites",
+        "200g caster sugar",
+        "1 tsp cornflour",
+        "1 tsp vinegar",
+        "0.5 tsp vanilla extract",
+        "300ml double cream (whipped)",
+        "300g mixed berries"
+      ],
+      "steps": [
+        "Heat oven to 120°C.",
+        "Whisk whites to soft peaks; add sugar gradually to stiff glossy peaks.",
+        "Fold in cornflour, vinegar, and vanilla.",
+        "Spread into disc; bake 1h then cool in oven.",
+        "Top with cream and berries."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "60 minutes",
+      "servings": "8 slices",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 28,
+      "name": "Profiteroles",
+      "image": "28.png",
+      "tags": ["plain flour", "butter", "water", "eggs", "cream", "chocolate"],
+      "ingredients": [
+        "60g butter",
+        "150ml water",
+        "75g plain flour",
+        "2 eggs",
+        "300ml whipped cream",
+        "150g chocolate (for sauce)"
+      ],
+      "steps": [
+        "Heat oven to 200°C.",
+        "Boil water and butter; add flour and beat to a paste.",
+        "Cool slightly; beat in eggs.",
+        "Pipe blobs; bake 18-20 minutes until puffed.",
+        "Cool, fill with cream, and top with chocolate sauce."
+      ],
+      "prepTime": "25 minutes",
+      "cookTime": "20 minutes",
+      "servings": "20 profiteroles",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 29,
+      "name": "Peach Cobbler",
+      "image": "29.png",
+      "tags": ["peaches", "plain flour", "sugar", "butter", "milk", "baking powder", "cinnamon"],
+      "ingredients": [
+        "600g peaches (sliced)",
+        "100g sugar",
+        "120g plain flour",
+        "1.5 tsp baking powder",
+        "Pinch of salt",
+        "120ml milk",
+        "80g butter (melted)",
+        "0.5 tsp cinnamon"
+      ],
+      "steps": [
+        "Heat oven to 180°C; toss peaches with half the sugar and cinnamon.",
+        "Mix flour, remaining sugar, baking powder, salt, and milk.",
+        "Pour melted butter into dish; add batter, then peaches.",
+        "Bake 35-40 minutes until golden."
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "40 minutes",
+      "servings": "6 portions",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 30,
+      "name": "Tiramisu (Quick)",
+      "image": "30.png",
+      "tags": ["mascarpone", "cream", "coffee", "ladyfingers", "sugar", "cocoa powder", "vanilla"],
+      "ingredients": [
+        "250g mascarpone",
+        "200ml double cream",
+        "60g sugar",
+        "1 tsp vanilla extract",
+        "200ml strong coffee (cooled)",
+        "200g ladyfingers",
+        "2 tbsp cocoa powder"
+      ],
+      "steps": [
+        "Whip cream with sugar and vanilla; fold in mascarpone.",
+        "Dip ladyfingers briefly in coffee; layer in dish.",
+        "Spread half the cream; repeat layers.",
+        "Dust with cocoa; chill 3 hours."
+      ],
+      "prepTime": "20 minutes",
+      "cookTime": "0 minutes",
+      "servings": "8 portions",
+      "difficulty": "Easy"
+    }
+   ]
+  }
