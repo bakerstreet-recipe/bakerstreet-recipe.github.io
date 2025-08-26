@@ -14,7 +14,7 @@ body {
 
 .top-bar {
   background: white;
-  height: 90px; /* Increased to accommodate larger logo */
+  height: 130px; /* Increased for much larger logo */
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -23,13 +23,13 @@ body {
 }
 
 .logo {
-  height: 80px; /* Larger logo */
-  margin: 5px 50px; /* Adjusted margin for spacing */
-  cursor: pointer; /* Indicate clickable */
+  height: 120px; /* Much larger logo */
+  margin: 5px 60px; /* Adjusted margin for spacing */
+  cursor: pointer;
 }
 
 .welcome-section {
-  padding-top: 90px; /* Adjusted for larger top bar */
+  padding-top: 130px; /* Adjusted for larger top bar */
   height: 350px;
   position: relative;
   overflow: hidden;
@@ -266,7 +266,7 @@ body {
 }
 
 .recipe-content {
-  padding-top: 90px; /* Adjusted for larger top bar */
+  padding-top: 130px; /* Adjusted for larger top bar */
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
