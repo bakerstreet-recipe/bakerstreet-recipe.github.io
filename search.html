@@ -1,17 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Results - Baking Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — Baker Street</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="top-bar">
-    <img src="logo.png" class="logo" alt="Logo">
-  </div>
-  <h2 class="result-title">Search results for: <span id="search-tags"></span></h2>
-  <div class="search-results"></div>
-  <script src="script.js"></script>
+  <header class="site-header">
+    <div class="logo">baker<br/>street</div>
+  </header>
+
+  <main class="container">
+    <h1>Search results</h1>
+    <p>Ingredients:</p>
+    <div id="search-tags" class="tags-inline"></div>
+    <div class="search-results"></div>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
