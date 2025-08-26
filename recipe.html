@@ -1,50 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Recipe — Baker Street</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">baker<br/>street</div>
-  </header>
-
-  <main class="container recipe-layout">
-    <button class="back-button">← Back</button>
-
-    <div class="recipe-hero">
-      <img class="recipe-image" alt="Recipe image" />
-      <div class="recipe-meta">
-        <h1 class="recipe-name"></h1>
-        <ul class="meta-list">
-          <li><strong>Prep:</strong> <span class="prep-time"></span></li>
-          <li><strong>Cook:</strong> <span class="cook-time"></span></li>
-          <li><strong>Servings:</strong> <span class="servings"></span></li>
-          <li><strong>Difficulty:</strong> <span class="difficulty"></span></li>
-        </ul>
-        <div class="tags-horizontal"></div>
+  <div class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+  </div>
+  <div class="recipe-content">
+    <div class="recipe-header">
+      <img src="" class="recipe-image" alt="Recipe Image">
+      <h1 class="recipe-name"></h1>
+      <div class="recipe-info">
+        <span>Prep Time: <span class="prep-time"></span></span>
+        <span>Cook Time: <span class="cook-time"></span></span>
+        <span>Servings: <span class="servings"></span></span>
+        <span>Difficulty: <span class="difficulty"></span></span>
       </div>
+      <div class="tags-horizontal"></div>
     </div>
-
-    <div class="recipe-details">
-      <section>
-        <h2>Ingredients</h2>
-        <ul class="ingredient-list"></ul>
-      </section>
-      <section>
-        <h2>Steps</h2>
-        <ol class="steps-list"></ol>
-      </section>
+    <div class="recipe-section">
+      <h2>Ingredients</h2>
+      <ul class="ingredient-list"></ul>
     </div>
-
-    <section>
-      <h2>Related recipes</h2>
+    <div class="recipe-section">
+      <h2>Steps</h2>
+      <ol class="steps-list"></ol>
+    </div>
+    <div class="related-recipes">
+      <h2>Related Recipes</h2>
       <div class="related-carousel"></div>
-    </section>
-  </main>
-
-  <script src="script.js" defer></script>
+    </div>
+    <button class="back-button">Back</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
