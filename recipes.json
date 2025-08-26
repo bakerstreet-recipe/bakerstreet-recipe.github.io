@@ -272,7 +272,7 @@
       "cookTime": "40 minutes",
       "servings": "8 slices",
       "difficulty": "Medium"
-    }
+    },
     {
       "id": 11,
       "name": "Oatmeal Raisin Cookies",
@@ -796,5 +796,5 @@
       "servings": "8 portions",
       "difficulty": "Easy"
     }
-   ]
-  }
+  ]
+}
