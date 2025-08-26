@@ -19,6 +19,10 @@ function initPage() {
   } else if (path.endsWith('recipe.html')) {
     initRecipe();
   }
+  // Add logo click event to all pages
+  document.querySelector('.logo').addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
 }
 
 function getConsistentColor(tag) {
