@@ -111,6 +111,18 @@ body {
   display: none;
   padding: 20px;
   z-index: 3;
+  animation: slideFromRight 0.3s ease-out forwards;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .tag {
