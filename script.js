@@ -1,30 +1,26 @@
 let recipes = [];
 let uniqueTags = [];
-const colorPalette = ['#FFB3BA','#FFDFBA','#FFFFBA','#BAFFB3','#BAE1FF','#D4A5A5','#FFD3B6','#FFAAA5','#C7CEEA','#B5EAD7'];
+const colorPalette = ['#FFB3BA', '#FFDFBA', '#FFFFBA', '#BAFFB3', '#BAE1FF', '#D4A5A5', '#FFD3B6', '#FFAAA5', '#C7CEEA', '#B5EAD7'];
 
-document.addEventListener('DOMContentLoaded', () => {
-  // IMPORTANT: keep the path relative to the HTML files
-  fetch('./recipes.json')
-    .then(res => {
-      if (!res.ok) throw new Error('Failed to load recipes.json');
-      return res.json();
-    })
-    .then(data => {
-      if (!data.recipes) throw new Error('Invalid recipes data');
-      recipes = data.recipes;
-      uniqueTags = [...new Set(recipes.flatMap(r => r.tags))].sort();
-      initPage();
-    })
-    .catch(err => {
-      console.error('Error loading recipes:', err);
-      // Initialize the page anyway so static UI works
-      initPage();
-    });
-});
+fetch('recipes.json')
+  .then(res => {
+    if (!res.ok) throw new Error('Failed to load recipes.json');
+    return res.json();
+  })
+  .then(data => {
+    if (!data.recipes) throw new Error('Invalid recipes data');
+    recipes = data.recipes;
+    uniqueTags = [...new Set(recipes.flatMap(r => r.tags))].sort();
+    initPage();
+  })
+  .catch(error => {
+    console.error('Error loading recipes:', error);
+    // Fallback UI (e.g., alert or placeholder) could be added here
+  });
 
 function initPage() {
   const path = window.location.pathname;
-  if (path.endsWith('index.html') || path === '/' || path === '' || path.endsWith('/bakerstreet-recipe.github.io/')) {
+  if (path.endsWith('index.html') || path === '/' || path === '') {
     initHome();
   } else if (path.endsWith('search.html')) {
     initSearch();
@@ -33,36 +29,46 @@ function initPage() {
   }
   const logo = document.querySelector('.logo');
   if (logo) {
-    logo.addEventListener('click', () => window.location.href = 'index.html');
+    logo.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
   }
 }
 
 function getConsistentColor(tag) {
   let hash = 0;
-  for (let i = 0; i < tag.length; i++) hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+  for (let i = 0; i < tag.length; i++) {
+    hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+  }
   return colorPalette[Math.abs(hash) % colorPalette.length];
 }
 
 function createParticles() {
   const container = document.querySelector('.particles');
-  if (!container) return;
-  for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = `${Math.random()*100}%`;
-    particle.style.top = `${Math.random()*100}%`;
-    container.appendChild(particle);
-    const duration = Math.random()*5 + 5;
-    const move = () => {
-      const x = Math.random()*100 - 50;
-      const y = Math.random()*100 - 50;
-      particle.animate([
-        { transform:'translate(0,0)', opacity:0.7 },
-        { transform:`translate(${x}px,${y}px)`, opacity:0.3 },
-        { transform:'translate(0,0)', opacity:0.7 }
-      ], { duration: duration*1000, easing:'ease-in-out', iterations: Infinity });
-    };
-    move();
+  if (container) {
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      container.appendChild(particle);
+      
+      const duration = Math.random() * 5 + 5; // 5-10s
+      const move = () => {
+        const x = Math.random() * 100 - 50; // -50 to 50px
+        const y = Math.random() * 100 - 50; // -50 to 50px
+        particle.animate([
+          { transform: 'translate(0, 0)', opacity: 0.7 },
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0.3 },
+          { transform: 'translate(0, 0)', opacity: 0.7 }
+        ], {
+          duration: duration * 1000,
+          easing: 'ease-in-out',
+          iterations: Infinity
+        });
+      };
+      move();
+    }
   }
 }
 
@@ -78,7 +84,7 @@ function initHome() {
 
   input.addEventListener('input', (e) => {
     const value = e.target.value.trim().toLowerCase();
-    if (value.length > 0 && uniqueTags.length) {
+    if (value.length > 0) {
       const matching = uniqueTags.filter(t => t.toLowerCase().includes(value) && !selectedTags.includes(t));
       if (matching.length > 0) {
         popup.innerHTML = '';
@@ -109,7 +115,7 @@ function initHome() {
       const tagSpan = document.createElement('span');
       tagSpan.classList.add('tag');
       tagSpan.style.background = getConsistentColor(tag);
-      tagSpan.innerHTML = `${tag}<span> ×</span>`;
+      tagSpan.innerHTML = `${tag}<span> x</span>`;
       tagSpan.querySelector('span').addEventListener('click', () => {
         tagSpan.remove();
         selectedTags = selectedTags.filter(s => s !== tag);
@@ -120,26 +126,29 @@ function initHome() {
 
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && selectedTags.length > 0) {
-      window.location.href = `search.html?ingredients=${encodeURIComponent(selectedTags.join(','))}`;
+      window.location.href = `search.html?ingredients=${selectedTags.join(',')}`;
     }
   });
 
   const carousel = document.querySelector('.carousel');
   if (carousel && recipes.length > 0) {
     const randomRecipes = [...recipes].sort(() => 0.5 - Math.random()).slice(0, 5);
-    const fragment = document.createDocumentFragment();
-    randomRecipes.forEach(r => {
-      const box = document.createElement('div');
-      box.classList.add('recipe-box');
-      box.innerHTML = `
-        <img src="${r.image}" alt="${r.name}">
-        <h3>${r.name}</h3>
-        <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join('')}</div>
-      `;
-      box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
-      fragment.appendChild(box);
-    });
-    carousel.appendChild(fragment);
+    const createBoxes = () => {
+      const fragment = document.createDocumentFragment();
+      randomRecipes.forEach(r => {
+        const box = document.createElement('div');
+        box.classList.add('recipe-box');
+        box.innerHTML = `
+          <img src="${r.image}" alt="${r.name}">
+          <h3>${r.name}</h3>
+          <div class="tags">${r.tags.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join('')}</div>
+        `;
+        box.addEventListener('click', () => window.location.href = `recipe.html?id=${r.id}`);
+        fragment.appendChild(box);
+      });
+      return fragment;
+    };
+    carousel.appendChild(createBoxes());
   }
 }
 
@@ -148,19 +157,15 @@ function initSearch() {
   const ingredientsStr = params.get('ingredients');
   if (!ingredientsStr) return;
 
-  const userIngredients = ingredientsStr.split(',').map(t => decodeURIComponent(t).trim().toLowerCase());
+  const userIngredients = ingredientsStr.split(',').map(t => t.trim().toLowerCase());
   const searchTags = document.getElementById('search-tags');
   if (searchTags) {
     searchTags.innerHTML = userIngredients.map(t => `<span class="tag" style="background:${getConsistentColor(t)}">${t}</span>`).join(' ');
   }
 
   const resultsDiv = document.querySelector('.search-results');
-  if (resultsDiv) {
-    const matchingRecipes = recipes.filter(r => {
-      const rtags = r.tags.map(t => t.toLowerCase());
-      return userIngredients.every(ui => rtags.includes(ui));
-    });
-
+  if (resultsDiv && recipes.length > 0) {
+    const matchingRecipes = recipes.filter(r => userIngredients.every(ui => r.tags.map(t => t.toLowerCase()).includes(ui)));
     if (matchingRecipes.length === 0) {
       resultsDiv.innerHTML = '<div class="no-results">No Results Found</div>';
     } else {
@@ -209,7 +214,7 @@ function initRecipe() {
       tag.style.background = getConsistentColor(t);
       tag.textContent = t;
       tag.addEventListener('click', () => {
-        window.location.href = `search.html?ingredients=${encodeURIComponent(t)}`;
+        window.location.href = `search.html?ingredients=${t}`;
       });
       tagsDiv.appendChild(tag);
     });
@@ -233,11 +238,9 @@ function initRecipe() {
     });
   }
 
-  if (relatedCarousel) {
+  if (relatedCarousel && recipes.length > 0) {
     relatedCarousel.innerHTML = '';
-    const related = recipes
-      .filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t)))
-      .slice(0, 3);
+    const related = recipes.filter(r => r.id !== id && r.tags.some(t => recipe.tags.includes(t))).slice(0, 3);
     related.forEach(rel => {
       const box = document.createElement('div');
       box.classList.add('related-box');
